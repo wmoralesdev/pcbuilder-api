@@ -7,6 +7,9 @@
     },
     "host": "pcbuild-api.herokuapp.com",
     "basePath": "/",
+    "display": {
+        "docExpansion": "none"
+    },
     "tags": [
         {
             "name": "Create/Delete",

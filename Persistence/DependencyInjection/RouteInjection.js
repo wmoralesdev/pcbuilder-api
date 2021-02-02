@@ -8,7 +8,11 @@ module.exports = function(app) {
     app.use('/', UserRouter)
     app.use('/', ComponentRouter)
 
-    app.use('/', swaggerUI.serve, swaggerUI.setup(swaggerFile))
+    app.use('/', swaggerUI.serve, swaggerUI.setup(swaggerFile, {
+        swaggerOptions: {
+            docExpansion: 'none'
+        }
+    }))
 
     // catch 404 and forward to error handler
     app.use(function (req, res, next) {
