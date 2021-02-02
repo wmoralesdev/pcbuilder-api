@@ -1,13 +1,18 @@
+const swaggerUI = require('swagger-ui-express')
+const swaggerFile = require('../../manual_swagger.json')
+
 const UserRouter = require('../../Infrastructure/RouterUsers')
 const ComponentRouter = require('../../Infrastructure/RouterComponents')
 
 module.exports = function(app) {
-    app.use('/users', UserRouter)
-    app.use('/components', ComponentRouter)
+    app.use('/', UserRouter)
+    app.use('/', ComponentRouter)
+
+    app.use('/', swaggerUI.serve, swaggerUI.setup(swaggerFile))
 
     // catch 404 and forward to error handler
     app.use(function (req, res, next) {
-        next(createError(404));
+        return res.status(404).json({error: true, message: "Not found"})
     });
 
     // error handler

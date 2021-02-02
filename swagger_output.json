@@ -1,0 +1,590 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "REST API",
+    "description": ""
+  },
+  "host": "localhost:8080",
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "Create/Delete",
+      "description": "Components creation or deletion (not going to use them)"
+    },
+    {
+      "name": "Read",
+      "description": "Query components from database"
+    },
+    {
+      "name": "PcBuild",
+      "description": "Endpoints for PcBuild Creation"
+    }
+  ],
+  "schemes": [
+    "http"
+  ],
+  "consumes": [],
+  "produces": [],
+  "paths": {
+    "/case": {
+      "get": {
+        "tags": [],
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      }
+    },
+    "/case/createMany": {
+      "post": {
+        "tags": [],
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      }
+    },
+    "/case/delete": {
+      "delete": {
+        "tags": [],
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      }
+    },
+    "/cooler": {
+      "get": {
+        "tags": [],
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      }
+    },
+    "/cooler/createMany": {
+      "post": {
+        "tags": [],
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      }
+    },
+    "/cooler/delete": {
+      "delete": {
+        "tags": [],
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      }
+    },
+    "/cpu": {
+      "get": {
+        "tags": [],
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      }
+    },
+    "/cpu/createMany": {
+      "post": {
+        "tags": [],
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      }
+    },
+    "/cpu/delete": {
+      "delete": {
+        "tags": [],
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      }
+    },
+    "/gpu": {
+      "get": {
+        "tags": [],
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      }
+    },
+    "/gpu/createMany": {
+      "post": {
+        "tags": [],
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      }
+    },
+    "/gpu/delete": {
+      "delete": {
+        "tags": [],
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      }
+    },
+    "/mobo": {
+      "get": {
+        "tags": [],
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      }
+    },
+    "/mobo/createMany": {
+      "post": {
+        "tags": [],
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      }
+    },
+    "/mobo/delete": {
+      "delete": {
+        "tags": [],
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      }
+    },
+    "/psu": {
+      "get": {
+        "tags": [],
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      }
+    },
+    "/psu/createMany": {
+      "post": {
+        "tags": [],
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      }
+    },
+    "/psu/delete": {
+      "delete": {
+        "tags": [],
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      }
+    },
+    "/ram": {
+      "get": {
+        "tags": [],
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      }
+    },
+    "/ram/createMany": {
+      "post": {
+        "tags": [],
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      }
+    },
+    "/ram/delete": {
+      "delete": {
+        "tags": [],
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      }
+    },
+    "/pcbuild/": {
+      "get": {
+        "tags": [],
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/pcbuild/build/{id}": {
+      "get": {
+        "tags": [],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/pcbuild/create": {
+      "post": {
+        "tags": [],
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/pcbuild/delete": {
+      "delete": {
+        "tags": [],
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/register": {
+      "post": {
+        "tags": [],
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/login": {
+      "post": {
+        "tags": [],
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      }
+    }
+  },
+  "definitions": {
+    "Case": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "example": "AZZA Iris 330"
+        },
+        "manufacturer": {
+          "type": "string",
+          "example": "AZZA"
+        },
+        "productionYear": {
+          "type": "number",
+          "example": 2020
+        },
+        "price": {
+          "type": "number",
+          "example": 7000
+        },
+        "powerConsumption": {
+          "type": "number",
+          "example": 0
+        },
+        "type": {
+          "type": "string",
+          "example": "ATX"
+        }
+      }
+    },
+    "Cooler": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "example": "NZXT Kraken 3500"
+        },
+        "manufacturer": {
+          "type": "string",
+          "example": "NZXT"
+        },
+        "productionYear": {
+          "type": "number",
+          "example": 2020
+        },
+        "price": {
+          "type": "number",
+          "example": 14500
+        },
+        "powerConsumption": {
+          "type": "number",
+          "example": 50
+        },
+        "type": {
+          "type": "string",
+          "example": "Water cooled"
+        }
+      }
+    },
+    "Cpu": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "example": "Ryzen 3 3100"
+        },
+        "manufacturer": {
+          "type": "string",
+          "example": "AMD"
+        },
+        "productionYear": {
+          "type": "number",
+          "example": 2018
+        },
+        "price": {
+          "type": "number",
+          "example": 15000
+        },
+        "powerConsumption": {
+          "type": "number",
+          "example": 50
+        },
+        "frequency": {
+          "type": "string",
+          "example": "3.6GHz to 4.0 GHz"
+        },
+        "cores": {
+          "type": "number",
+          "example": 4
+        },
+        "threads": {
+          "type": "number",
+          "example": 8
+        },
+        "integratedGpu": {
+          "type": "boolean",
+          "example": false
+        }
+      }
+    },
+    "Gpu": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "example": "AsRock Phantom 8GB RX 5700 XT OC"
+        },
+        "manufacturer": {
+          "type": "string",
+          "example": "AsRock"
+        },
+        "productionYear": {
+          "type": "number",
+          "example": 2020
+        },
+        "price": {
+          "type": "number",
+          "example": 56000
+        },
+        "powerConsumption": {
+          "type": "number",
+          "example": 75
+        },
+        "vram": {
+          "type": "number",
+          "example": 8
+        },
+        "fans": {
+          "type": "number",
+          "example": 3
+        }
+      }
+    },
+    "Mobo": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "example": "Gigabyte B450M DHS3"
+        },
+        "manufacturer": {
+          "type": "string",
+          "example": "Gigabyte"
+        },
+        "productionYear": {
+          "type": "number",
+          "example": 2017
+        },
+        "price": {
+          "type": "number",
+          "example": 9500
+        },
+        "powerConsumption": {
+          "type": "number",
+          "example": 0
+        },
+        "type": {
+          "type": "string",
+          "example": "Micro ATX"
+        },
+        "compatibility": {
+          "type": "string",
+          "example": "AMD"
+        },
+        "ramSockets": {
+          "type": "number",
+          "example": 4
+        },
+        "pciePorts": {
+          "type": "number",
+          "example": 2
+        }
+      }
+    },
+    "PcBuild": {
+      "type": "object",
+      "properties": {
+        "owner": {
+          "type": "string",
+          "example": "6hnfa789rhkdsa8"
+        },
+        "name": {
+          "type": "string",
+          "example": "PC Build Upgrade 2020"
+        },
+        "case": {
+          "type": "string",
+          "example": "6hnfa789rhkdsa8"
+        },
+        "cooler": {
+          "type": "string",
+          "example": "6hnfa789rhkdsa8"
+        },
+        "cpu": {
+          "type": "string",
+          "example": "6hnfa789rhkdsa8"
+        },
+        "gpu": {
+          "type": "string",
+          "example": "6hnfa789rhkdsa8"
+        },
+        "mobo": {
+          "type": "string",
+          "example": "6hnfa789rhkdsa8"
+        },
+        "psu": {
+          "type": "string",
+          "example": "6hnfa789rhkdsa8"
+        },
+        "ram": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "Psu": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "example": "XPG 550 Bronze 80+"
+        },
+        "manufacturer": {
+          "type": "string",
+          "example": "XPG"
+        },
+        "productionYear": {
+          "type": "number",
+          "example": 2018
+        },
+        "price": {
+          "type": "number",
+          "example": 6900
+        },
+        "powerConsumption": {
+          "type": "number",
+          "example": 0
+        },
+        "capacity": {
+          "type": "number",
+          "example": 550
+        }
+      }
+    },
+    "Ram": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "example": "HyperX 8GB 3200MHz"
+        },
+        "manufacturer": {
+          "type": "string",
+          "example": "HyperX"
+        },
+        "productionYear": {
+          "type": "number",
+          "example": 2020
+        },
+        "price": {
+          "type": "number",
+          "example": 7000
+        },
+        "powerConsumption": {
+          "type": "number",
+          "example": 0
+        },
+        "frequency": {
+          "type": "string",
+          "example": "3200 MHz"
+        },
+        "capacity": {
+          "type": "number",
+          "example": 8
+        },
+        "type": {
+          "type": "string",
+          "example": "DDR4"
+        }
+      }
+    },
+    "User": {
+      "type": "object",
+      "properties": {
+        "username": {
+          "type": "string",
+          "example": "wmoralesdev"
+        },
+        "email": {
+          "type": "string",
+          "example": "walterrafael26@gmail.com"
+        },
+        "password": {
+          "type": "string",
+          "example": "adminadmin"
+        }
+      }
+    }
+  }
+}

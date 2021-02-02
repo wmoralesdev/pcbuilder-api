@@ -2,7 +2,8 @@ const Model = require('../Domain/Case')
 const { createObjects, searchObject, deleteObjects } = require('./Common/ObjectHandling')
 
 module.exports = {
-    createMany: async(req, res) => {
+    createMany: async(req, res, next) => {
+        // #swagger.tags = ['Read']
         try{
             req.body.components.forEach(async (e) => {
                 let obj = await createObjects(e, Model, 'case')

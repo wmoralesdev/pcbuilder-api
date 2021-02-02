@@ -13,7 +13,6 @@ const PcBuild = require('../Application/ControllerPcBuild');
 
 var router = express.Router();
 
-// Case
 router.get('/case', Case.get)
 router.post('/case/createMany', Case.createMany)
 router.delete('/case/delete', Case.delete)
@@ -50,7 +49,7 @@ router.delete('/ram/delete', Ram.delete)
 
 // PcBuild
 router.get('/pcbuild/', Authenticator, PcBuild.getPcBuilds)
-router.get('/pcbuild/build', Authenticator, PcBuild.getSpecificBuild)
+router.get('/pcbuild/build/:id', Authenticator, PcBuild.getSpecificBuild)
 router.post('/pcbuild/create', Authenticator, PcBuild.create)
 router.delete('/pcbuild/delete', Authenticator, PcBuild.deleteBuild)
 

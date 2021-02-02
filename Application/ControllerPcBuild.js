@@ -120,27 +120,32 @@ module.exports = {
     },
 
     getSpecificBuild: async(req, res) => {
-        var build = await PcBuild.findOne({_id: req.query._id})
+        try {
+            var build = await PcBuild.findOne({_id: req.params.id})
 
-        if(build == null)
-            return res.status(404).json({error: true, message: "Build no encontrado"})
+            if(build == null)
+                return res.status(404).json({error: true, message: "Build no encontrado"})
 
-        var pc = {
-            _id: build._id,
-            name: build.name,
+            var pc = {
+                _id: build._id,
+                name: build.name,
 
-            case: await Case.findOne({_id: build.case}).select('-__v -name_lower -_component -_id'),
-            cooler: await Cooler.findOne({_id: build.cooler}).select('-__v -name_lower -_component -_id'),
-            cpu: await CPU.findOne({_id: build.cpu}).select('-__v -name_lower -_component -_id'),
-            gpu: await GPU.findOne({_id: build.gpu}).select('-__v -name_lower -_component -_id'),
-            mobo: await Mobo.findOne({_id: build.mobo}).select('-__v -name_lower -_component -_id'),
-            psu: await PSU.findOne({_id: build.psu}).select('-__v -name_lower -_component -_id'),
-            ram: await build.ram.map(async(e) => {
-                return await Ram.findOne({_id: e}.select('-__v -name_lower -_component -_id'))
-            })
+                case: await Case.findOne({_id: build.case}).select('-__v -name_lower -_component -_id'),
+                cooler: await Cooler.findOne({_id: build.cooler}).select('-__v -name_lower -_component -_id'),
+                cpu: await CPU.findOne({_id: build.cpu}).select('-__v -name_lower -_component -_id'),
+                gpu: await GPU.findOne({_id: build.gpu}).select('-__v -name_lower -_component -_id'),
+                mobo: await Mobo.findOne({_id: build.mobo}).select('-__v -name_lower -_component -_id'),
+                psu: await PSU.findOne({_id: build.psu}).select('-__v -name_lower -_component -_id'),
+                ram: await build.ram.map(async(e) => {
+                    return await Ram.findOne({_id: e}.select('-__v -name_lower -_component -_id'))
+                })
+            }
+
+            return res.status(200).json(pc)
         }
-
-        return res.status(200).json(pc)
+        catch(err) {
+            return res.status(400).json({error: true, message: "Falta el ID"})
+        }
     },
 
     deleteBuild: async(req, res) => {

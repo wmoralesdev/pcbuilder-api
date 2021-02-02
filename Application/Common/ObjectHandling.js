@@ -1,4 +1,5 @@
 async function createObjects(e, creator, typeOf) {
+    // #swagger.tags = ['Create/Delete']
     switch (typeOf) {
         case 'case':
             return new creator({
@@ -100,10 +101,26 @@ async function createObjects(e, creator, typeOf) {
 }
 
 async function searchObject({ page = 1, limit = 12, search }, searcher) {
+    // #swagger.tags = ['Query']
     var objects = []
 
     if(search != null)
-        objects = await searcher.find({ name_lower: search }).select('-__v -name_lower')
+        // objects = await searcher.find({ name_lower: /search/i }).select('-__v -name_lower')
+        objects = await searcher.aggregate(
+            [
+                // Match first to reduce documents to those where the array contains the match
+                { "$match": {
+                    "name_lower": { "$regex": search, "$options": "i" }
+                }},
+        
+                // Unwind to "de-normalize" the document per array element
+                { "$unwind": "$name_lower" },
+        
+                // Now filter those document for the elements that match
+                { "$match": {
+                    "name_lower": { "$regex": search, "$options": "i" }
+                }}
+            ])
             .limit(limit * 1)
             .skip((page - 1) * limit)
             .exec()
@@ -123,6 +140,7 @@ async function searchObject({ page = 1, limit = 12, search }, searcher) {
 }
 
 async function deleteObjects(deleter, component) {
+    // #swagger.tags = ['Create/Delete']
     var count;
     
     try{
