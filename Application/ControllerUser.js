@@ -43,7 +43,7 @@ const Controller = {
             if(!validCredentials)
                 throw {code: 401, error: true, message: "Wrong password"}
 
-            const token = jwt.sign({_id: userToLog._id}, process.env.TOKEN_KEY)
+            const token = jwt.sign({_id: userToLog._id, username: userToLog.username}, process.env.TOKEN_KEY)
 
             return res.status(200).json({error: false, message: "Success", token: token})
         }
