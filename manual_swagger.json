@@ -2,11 +2,19 @@
     "swagger": "2.0",
     "info": {
         "version": "1.0.0",
-        "title": "REST API",
+        "title": "PC Build REST API",
         "description": ""
     },
     "host": "pcbuild-api.herokuapp.com",
     "basePath": "/",
+    "securityDefinitions": {
+        "Bearer": {
+            "type": "Authorization token",
+            "name": "Authorize",
+            "definition": "Authorization to access with user JWT",
+            "in": "header"
+        }
+    },
     "display": {
         "docExpansion": "none"
     },
@@ -22,6 +30,10 @@
         {
             "name": "PcBuild",
             "description": "Endpoints for PcBuild Creation"
+        },
+        {
+            "name": "User",
+            "description": "Endpoints for User data"
         }
     ],
     "schemes": [
@@ -33,7 +45,9 @@
     "paths": {
         "/case": {
             "get": {
-                "tags": ["Read"],
+                "tags": [
+                    "Read"
+                ],
                 "description": "",
                 "parameters": [
                     {
@@ -60,7 +74,9 @@
         },
         "/case/createMany": {
             "post": {
-                "tags": ["Create/Delete"],
+                "tags": [
+                    "Create/Delete"
+                ],
                 "description": "",
                 "parameters": [],
                 "responses": {}
@@ -68,7 +84,9 @@
         },
         "/case/delete": {
             "delete": {
-                "tags": ["Create/Delete"],
+                "tags": [
+                    "Create/Delete"
+                ],
                 "description": "",
                 "parameters": [],
                 "responses": {}
@@ -76,7 +94,9 @@
         },
         "/cooler": {
             "get": {
-                "tags": ["Read"],
+                "tags": [
+                    "Read"
+                ],
                 "description": "",
                 "parameters": [
                     {
@@ -103,7 +123,9 @@
         },
         "/cooler/createMany": {
             "post": {
-                "tags": ["Create/Delete"],
+                "tags": [
+                    "Create/Delete"
+                ],
                 "description": "",
                 "parameters": [],
                 "responses": {}
@@ -111,7 +133,9 @@
         },
         "/cooler/delete": {
             "delete": {
-                "tags": ["Create/Delete"],
+                "tags": [
+                    "Create/Delete"
+                ],
                 "description": "",
                 "parameters": [],
                 "responses": {}
@@ -119,7 +143,9 @@
         },
         "/cpu": {
             "get": {
-                "tags": ["Read"],
+                "tags": [
+                    "Read"
+                ],
                 "description": "",
                 "parameters": [
                     {
@@ -146,7 +172,9 @@
         },
         "/cpu/createMany": {
             "post": {
-                "tags": ["Create/Delete"],
+                "tags": [
+                    "Create/Delete"
+                ],
                 "description": "",
                 "parameters": [],
                 "responses": {}
@@ -154,7 +182,9 @@
         },
         "/cpu/delete": {
             "delete": {
-                "tags": ["Create/Delete"],
+                "tags": [
+                    "Create/Delete"
+                ],
                 "description": "",
                 "parameters": [],
                 "responses": {}
@@ -162,7 +192,9 @@
         },
         "/gpu": {
             "get": {
-                "tags": ["Read"],
+                "tags": [
+                    "Read"
+                ],
                 "description": "",
                 "parameters": [
                     {
@@ -189,7 +221,9 @@
         },
         "/gpu/createMany": {
             "post": {
-                "tags": ["Create/Delete"],
+                "tags": [
+                    "Create/Delete"
+                ],
                 "description": "",
                 "parameters": [],
                 "responses": {}
@@ -197,7 +231,9 @@
         },
         "/gpu/delete": {
             "delete": {
-                "tags": ["Create/Delete"],
+                "tags": [
+                    "Create/Delete"
+                ],
                 "description": "",
                 "parameters": [],
                 "responses": {}
@@ -205,7 +241,9 @@
         },
         "/mobo": {
             "get": {
-                "tags": ["Read"],
+                "tags": [
+                    "Read"
+                ],
                 "description": "",
                 "parameters": [
                     {
@@ -232,7 +270,9 @@
         },
         "/mobo/createMany": {
             "post": {
-                "tags": ["Create/Delete"],
+                "tags": [
+                    "Create/Delete"
+                ],
                 "description": "",
                 "parameters": [],
                 "responses": {}
@@ -240,7 +280,9 @@
         },
         "/mobo/delete": {
             "delete": {
-                "tags": ["Create/Delete"],
+                "tags": [
+                    "Create/Delete"
+                ],
                 "description": "",
                 "parameters": [],
                 "responses": {}
@@ -248,7 +290,9 @@
         },
         "/psu": {
             "get": {
-                "tags": ["Read"],
+                "tags": [
+                    "Read"
+                ],
                 "description": "",
                 "parameters": [
                     {
@@ -275,7 +319,9 @@
         },
         "/psu/createMany": {
             "post": {
-                "tags": ["Create/Delete"],
+                "tags": [
+                    "Create/Delete"
+                ],
                 "description": "",
                 "parameters": [],
                 "responses": {}
@@ -283,7 +329,9 @@
         },
         "/psu/delete": {
             "delete": {
-                "tags": ["Create/Delete"],
+                "tags": [
+                    "Create/Delete"
+                ],
                 "description": "",
                 "parameters": [],
                 "responses": {}
@@ -291,7 +339,9 @@
         },
         "/ram": {
             "get": {
-                "tags": ["Read"],
+                "tags": [
+                    "Read"
+                ],
                 "description": "",
                 "parameters": [
                     {
@@ -318,7 +368,9 @@
         },
         "/ram/createMany": {
             "post": {
-                "tags": ["Create/Delete"],
+                "tags": [
+                    "Create/Delete"
+                ],
                 "description": "",
                 "parameters": [],
                 "responses": {}
@@ -326,7 +378,9 @@
         },
         "/ram/delete": {
             "delete": {
-                "tags": ["Create/Delete"],
+                "tags": [
+                    "Create/Delete"
+                ],
                 "description": "",
                 "parameters": [],
                 "responses": {}
@@ -334,8 +388,15 @@
         },
         "/pcbuild/": {
             "get": {
-                "tags": ["PcBuild"],
+                "tags": [
+                    "PcBuild"
+                ],
                 "description": "",
+                "security": [
+                    {
+                        "Bearer": []
+                    }
+                ],
                 "parameters": [
                     {
                         "name": "page",
@@ -348,6 +409,12 @@
                         "in": "query",
                         "type": "number",
                         "description": "Items per page"
+                    },
+                    {
+                        "name": "Authorize",
+                        "in": "header",
+                        "type": "string",
+                        "required": true
                     }
                 ],
                 "responses": {
@@ -362,14 +429,27 @@
         },
         "/pcbuild/build/{id}": {
             "get": {
-                "tags": ["PcBuild"],
+                "tags": [
+                    "PcBuild"
+                ],
                 "description": "",
+                "security": [
+                    {
+                        "Bearer": []
+                    }
+                ],
                 "parameters": [
                     {
                         "name": "id",
                         "in": "path",
                         "required": true,
                         "type": "string"
+                    },
+                    {
+                        "name": "Authorize",
+                        "in": "header",
+                        "type": "string",
+                        "required": true
                     }
                 ],
                 "responses": {
@@ -384,9 +464,23 @@
         },
         "/pcbuild/create": {
             "post": {
-                "tags": ["PcBuild"],
+                "tags": [
+                    "PcBuild"
+                ],
                 "description": "",
-                "parameters": [],
+                "security": [
+                    {
+                        "Bearer": []
+                    }
+                ],
+                "parameters": [
+                    {
+                        "name": "Authorize",
+                        "in": "header",
+                        "type": "string",
+                        "required": true
+                    }
+                ],
                 "responses": {
                     "400": {
                         "description": "Bad Request"
@@ -399,11 +493,23 @@
         },
         "/pcbuild/delete": {
             "delete": {
-                "tags": ["PcBuild"],
-                "description": "",
-                "parameters": [
-
+                "tags": [
+                    "PcBuild"
                 ],
+                "security": [
+                    {
+                        "Bearer": []
+                    }
+                ],
+                "parameters": [
+                    {
+                        "name": "Authorize",
+                        "in": "header",
+                        "type": "string",
+                        "required": true
+                    }
+                ],
+                "description": "",
                 "responses": {
                     "400": {
                         "description": "Bad Request"
@@ -416,9 +522,24 @@
         },
         "/register": {
             "post": {
-                "tags": ["Create/Delete"],
+                "tags": [
+                    "User"
+                ],
+                "security": [
+                    {
+                        "Bearer": []
+                    }
+                ],
+                "content": [],
                 "description": "",
-                "parameters": [],
+                "parameters": [
+                    {
+                        "name": "Authorize",
+                        "in": "header",
+                        "type": "string",
+                        "required": true
+                    }
+                ],
                 "responses": {
                     "201": {
                         "description": "Created"
@@ -431,10 +552,38 @@
         },
         "/login": {
             "post": {
-                "tags": ["Create/Delete"],
+                "tags": [
+                    "User"
+                ],
+                "security": [
+                    {
+                        "Bearer": []
+                    }
+                ],
+                "parameters": [
+                    {
+                        "name": "Authorize",
+                        "in": "header",
+                        "type": "string",
+                        "required": true
+                    }
+                ],
+                "content": [],
                 "description": "",
-                "parameters": [],
-                "responses": {}
+                "responses": {
+                    "200": {
+                        "description": "Logged in"
+                    },
+                    "401": {
+                        "description": "Wrong password"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "404": {
+                        "description": "User not found"
+                    }
+                }
             }
         }
     },
