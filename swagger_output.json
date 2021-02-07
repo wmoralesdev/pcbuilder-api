@@ -35,40 +35,8 @@
         "responses": {}
       }
     },
-    "/case/createMany": {
-      "post": {
-        "tags": [],
-        "description": "",
-        "parameters": [],
-        "responses": {}
-      }
-    },
-    "/case/delete": {
-      "delete": {
-        "tags": [],
-        "description": "",
-        "parameters": [],
-        "responses": {}
-      }
-    },
     "/cooler": {
       "get": {
-        "tags": [],
-        "description": "",
-        "parameters": [],
-        "responses": {}
-      }
-    },
-    "/cooler/createMany": {
-      "post": {
-        "tags": [],
-        "description": "",
-        "parameters": [],
-        "responses": {}
-      }
-    },
-    "/cooler/delete": {
-      "delete": {
         "tags": [],
         "description": "",
         "parameters": [],
@@ -83,40 +51,8 @@
         "responses": {}
       }
     },
-    "/cpu/createMany": {
-      "post": {
-        "tags": [],
-        "description": "",
-        "parameters": [],
-        "responses": {}
-      }
-    },
-    "/cpu/delete": {
-      "delete": {
-        "tags": [],
-        "description": "",
-        "parameters": [],
-        "responses": {}
-      }
-    },
     "/gpu": {
       "get": {
-        "tags": [],
-        "description": "",
-        "parameters": [],
-        "responses": {}
-      }
-    },
-    "/gpu/createMany": {
-      "post": {
-        "tags": [],
-        "description": "",
-        "parameters": [],
-        "responses": {}
-      }
-    },
-    "/gpu/delete": {
-      "delete": {
         "tags": [],
         "description": "",
         "parameters": [],
@@ -131,22 +67,6 @@
         "responses": {}
       }
     },
-    "/mobo/createMany": {
-      "post": {
-        "tags": [],
-        "description": "",
-        "parameters": [],
-        "responses": {}
-      }
-    },
-    "/mobo/delete": {
-      "delete": {
-        "tags": [],
-        "description": "",
-        "parameters": [],
-        "responses": {}
-      }
-    },
     "/psu": {
       "get": {
         "tags": [],
@@ -155,40 +75,8 @@
         "responses": {}
       }
     },
-    "/psu/createMany": {
-      "post": {
-        "tags": [],
-        "description": "",
-        "parameters": [],
-        "responses": {}
-      }
-    },
-    "/psu/delete": {
-      "delete": {
-        "tags": [],
-        "description": "",
-        "parameters": [],
-        "responses": {}
-      }
-    },
     "/ram": {
       "get": {
-        "tags": [],
-        "description": "",
-        "parameters": [],
-        "responses": {}
-      }
-    },
-    "/ram/createMany": {
-      "post": {
-        "tags": [],
-        "description": "",
-        "parameters": [],
-        "responses": {}
-      }
-    },
-    "/ram/delete": {
-      "delete": {
         "tags": [],
         "description": "",
         "parameters": [],
@@ -222,36 +110,6 @@
             "type": "string"
           }
         ],
-        "responses": {
-          "400": {
-            "description": "Bad Request"
-          },
-          "401": {
-            "description": "Unauthorized"
-          }
-        }
-      }
-    },
-    "/pcbuild/create": {
-      "post": {
-        "tags": [],
-        "description": "",
-        "parameters": [],
-        "responses": {
-          "400": {
-            "description": "Bad Request"
-          },
-          "401": {
-            "description": "Unauthorized"
-          }
-        }
-      }
-    },
-    "/pcbuild/delete": {
-      "delete": {
-        "tags": [],
-        "description": "",
-        "parameters": [],
         "responses": {
           "400": {
             "description": "Bad Request"
