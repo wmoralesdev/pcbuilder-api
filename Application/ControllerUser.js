@@ -6,8 +6,6 @@ const { registerValidator, loginValidator } = require('../Persistence/UserValida
 const Controller = {
     register: async (req, res) => {
         try{
-            await registerValidator(req.body)
-
             let isUnique = await User.find({ $or: [{ username: req.body.username }, {email: req.body.email}] })
 
             if(isUnique.length > 0)
